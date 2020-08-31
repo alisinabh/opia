@@ -9,6 +9,7 @@ defmodule Opia.Application do
     children = [
       # Starts a worker by calling: Opia.Worker.start_link(arg)
       # {Opia.Worker, arg}
+      {Plug.Cowboy, scheme: :http, plug: Opia.Router, options: [port: 4001]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
